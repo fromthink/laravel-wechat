@@ -59,7 +59,7 @@ return [
          */
         // 'open_platform' => [
         //     'uri' => 'serve',
-        //     'action' => Overtrue\LaravelWeChat\Controllers\OpenPlatformController::class,
+        //     'action' => Fromthink\LaravelWeChat\Controllers\OpenPlatformController::class,
         //     'attributes' => [
         //         'prefix' => 'open-platform',
         //         'middleware' => null,

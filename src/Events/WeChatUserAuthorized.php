@@ -9,10 +9,10 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Overtrue\LaravelWeChat\Events;
+namespace Fromthink\LaravelWeChat\Events;
 
 use Illuminate\Queue\SerializesModels;
-use Overtrue\Socialite\User;
+use Fromthink\Socialite\User;
 
 class WeChatUserAuthorized
 {
@@ -27,7 +27,7 @@ class WeChatUserAuthorized
     /**
      * Create a new event instance.
      *
-     * @param \Overtrue\Socialite\User $user
+     * @param \Fromthink\Socialite\User $user
      * @param bool                     $isNewSession
      */
     public function __construct(User $user, $isNewSession = false, string $account = '')
@@ -40,7 +40,7 @@ class WeChatUserAuthorized
     /**
      * Retrieve the authorized user.
      *
-     * @return \Overtrue\Socialite\User
+     * @return \Fromthink\Socialite\User
      */
     public function getUser()
     {

@@ -19,16 +19,16 @@
     },
     "autoload": {
         "psr-4": {
-            "Overtrue\\LaravelWeChat\\": "src/"
+            "Fromthink\\LaravelWeChat\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Overtrue\\LaravelWeChat\\ServiceProvider"
+                "Fromthink\\LaravelWeChat\\ServiceProvider"
             ],
             "aliases": {
-                "EasyWeChat": "Overtrue\\LaravelWeChat\\Facade"
+                "EasyWeChat": "Fromthink\\LaravelWeChat\\Facade"
             }
         }
     }

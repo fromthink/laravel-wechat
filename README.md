@@ -30,18 +30,18 @@ composer require "overtrue/laravel-wechat:^6.0"
 ```php
 'providers' => [
     // ...
-    Overtrue\LaravelWeChat\ServiceProvider::class,
+    Fromthink\LaravelWeChat\ServiceProvider::class,
 ],
 'aliases' => [
     // ...
-    'EasyWeChat' => Overtrue\LaravelWeChat\Facade::class,
+    'EasyWeChat' => Fromthink\LaravelWeChat\Facade::class,
 ],
 ```
 
 2. 创建配置文件：
 
 ```shell
-php artisan vendor:publish --provider="Overtrue\LaravelWeChat\ServiceProvider"
+php artisan vendor:publish --provider="Fromthink\LaravelWeChat\ServiceProvider"
 ```
 
 3. 修改应用根目录下的 `config/wechat.php` 中对应的参数即可。
@@ -53,7 +53,7 @@ php artisan vendor:publish --provider="Overtrue\LaravelWeChat\ServiceProvider"
 1. 在 `bootstrap/app.php` 中 82 行左右：
 
 ```php
-$app->register(Overtrue\LaravelWeChat\ServiceProvider::class);
+$app->register(Fromthink\LaravelWeChat\ServiceProvider::class);
 ```
 
 2. 如果你习惯使用 `config/wechat.php` 来配置的话，将 `vendor/overtrue/laravel-wechat/src/config.php` 拷贝到`项目根目录/config`目录下，并将文件名改成`wechat.php`。
@@ -140,7 +140,7 @@ class WeChatController extends Controller
 ```php
 protected $routeMiddleware = [
     // ...
-    'wechat.oauth' => \Overtrue\LaravelWeChat\Middleware\OAuthAuthenticate::class,
+    'wechat.oauth' => \Fromthink\LaravelWeChat\Middleware\OAuthAuthenticate::class,
 ];
 ```
 
@@ -182,7 +182,7 @@ Route::group(['middleware' => ['wechat.oauth:default,snsapi_userinfo']], functio
 
 ```php
 use Illuminate\Support\Arr;
-use Overtrue\Socialite\User as SocialiteUser;
+use Fromthink\Socialite\User as SocialiteUser;
 
 $user = new SocialiteUser([
                 'id' => Arr::get($user, 'openid'),
@@ -208,7 +208,7 @@ session(['wechat.oauth_user.default' => $user]); // 同理，`default` 可以更
 
 > 你可以监听相应的事件，并对事件发生后执行相应的操作。
 
-- OAuth 网页授权：`Overtrue\LaravelWeChat\Events\WeChatUserAuthorized`
+- OAuth 网页授权：`Fromthink\LaravelWeChat\Events\WeChatUserAuthorized`
 
 ```php
 // 该事件有以下属性
@@ -225,7 +225,7 @@ $event->account; // 当前中间件所使用的账号，对应在配置文件中
 ```php
 'open_platform' => [
     'uri' => 'serve',
-    'action' => Overtrue\LaravelWeChat\Controllers\OpenPlatformController::class,
+    'action' => Fromthink\LaravelWeChat\Controllers\OpenPlatformController::class,
     'attributes' => [
         'prefix' => 'open-platform',
         'middleware' => null,
@@ -235,10 +235,10 @@ $event->account; // 当前中间件所使用的账号，对应在配置文件中
 
 Tips: 默认的控制器会根据微信开放平台的推送内容触发如下事件，你可以监听相应的事件并进行处理：
 
-- 授权方成功授权：`Overtrue\LaravelWeChat\Events\OpenPlatform\Authorized`
-- 授权方更新授权：`Overtrue\LaravelWeChat\Events\OpenPlatform\UpdateAuthorized`
-- 授权方取消授权：`Overtrue\LaravelWeChat\Events\OpenPlatform\Unauthorized`
-- 开放平台推送 VerifyTicket：`Overtrue\LaravelWeChat\Events\OpenPlatform\VerifyTicketRefreshed`
+- 授权方成功授权：`Fromthink\LaravelWeChat\Events\OpenPlatform\Authorized`
+- 授权方更新授权：`Fromthink\LaravelWeChat\Events\OpenPlatform\UpdateAuthorized`
+- 授权方取消授权：`Fromthink\LaravelWeChat\Events\OpenPlatform\Unauthorized`
+- 开放平台推送 VerifyTicket：`Fromthink\LaravelWeChat\Events\OpenPlatform\VerifyTicketRefreshed`
 
 ```php
 // 事件有如下属性
