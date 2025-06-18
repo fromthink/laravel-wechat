@@ -1,5 +1,5 @@
 {
-    "name": "overtrue/laravel-wechat",
+    "name": "fromthink/laravel-wechat",
     "description": "微信 SDK for Laravel",
     "keywords": ["wechat", "weixin","laravel", "sdk"],
     "license": "MIT",
@@ -11,7 +11,7 @@
     ],
     "require": {
         "illuminate/container": "^5.1 || ^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0",
-        "w7corp/easywechat": "^5.0"
+        "fromthink/easywechat": "^5.0"
     },
     "require-dev": {
         "laravel/framework": "^8.5",
