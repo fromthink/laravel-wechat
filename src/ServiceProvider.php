@@ -11,12 +11,12 @@
 
 namespace Fromthink\LaravelWeChat;
 
-use EasyWeChat\MiniProgram\Application as MiniProgram;
-use EasyWeChat\OfficialAccount\Application as OfficialAccount;
-use EasyWeChat\OpenPlatform\Application as OpenPlatform;
-use EasyWeChat\OpenWork\Application as OpenWork;
-use EasyWeChat\Payment\Application as Payment;
-use EasyWeChat\Work\Application as Work;
+use Fromthink\EasyWeChat\MiniProgram\Application as MiniProgram;
+use Fromthink\EasyWeChat\OfficialAccount\Application as OfficialAccount;
+use Fromthink\EasyWeChat\OpenPlatform\Application as OpenPlatform;
+use Fromthink\EasyWeChat\OpenWork\Application as OpenWork;
+use Fromthink\EasyWeChat\Payment\Application as Payment;
+use Fromthink\EasyWeChat\Work\Application as Work;
 use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 use Laravel\Lumen\Application as LumenApplication;

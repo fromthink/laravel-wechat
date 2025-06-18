@@ -11,8 +11,8 @@
 
 namespace Fromthink\LaravelWeChat\Controllers;
 
-use EasyWeChat\OpenPlatform\Application;
-use EasyWeChat\OpenPlatform\Server\Guard;
+use Fromthink\EasyWeChat\OpenPlatform\Application;
+use Fromthink\EasyWeChat\OpenPlatform\Server\Guard;
 use Fromthink\LaravelWeChat\Events\OpenPlatform as Events;
 
 class OpenPlatformController extends Controller
@@ -20,7 +20,7 @@ class OpenPlatformController extends Controller
     /**
      * Register for open platform.
      *
-     * @param \EasyWeChat\OpenPlatform\Application $application
+     * @param \Fromthink\EasyWeChat\OpenPlatform\Application $application
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */

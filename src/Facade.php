@@ -31,7 +31,7 @@ class Facade extends LaravelFacade
     }
 
     /**
-     * @return \EasyWeChat\OfficialAccount\Application
+     * @return \Fromthink\EasyWeChat\OfficialAccount\Application
      */
     public static function officialAccount($name = '')
     {
@@ -39,7 +39,7 @@ class Facade extends LaravelFacade
     }
 
     /**
-     * @return \EasyWeChat\Work\Application
+     * @return \Fromthink\EasyWeChat\Work\Application
      */
     public static function work($name = '')
     {
@@ -47,7 +47,7 @@ class Facade extends LaravelFacade
     }
 
     /**
-     * @return \EasyWeChat\Payment\Application
+     * @return \Fromthink\EasyWeChat\Payment\Application
      */
     public static function payment($name = '')
     {
@@ -55,7 +55,7 @@ class Facade extends LaravelFacade
     }
 
     /**
-     * @return \EasyWeChat\MiniProgram\Application
+     * @return \Fromthink\EasyWeChat\MiniProgram\Application
      */
     public static function miniProgram($name = '')
     {
@@ -63,7 +63,7 @@ class Facade extends LaravelFacade
     }
 
     /**
-     * @return \EasyWeChat\OpenPlatform\Application
+     * @return \Fromthink\EasyWeChat\OpenPlatform\Application
      */
     public static function openPlatform($name = '')
     {
